@@ -7,8 +7,71 @@ title: "Portfolio 1"
 ```{r load-packages, warning = FALSE, message=FALSE}
 library(tidyverse) 
 library(tidyr)
-data(fish_encounters)
 ```
 
 # **Goal**
 The goal of this portfolio piece is to create a reference I can look back on later to help me with R and Git/GitHub, because I plan to use R after I graduate. The process of making this guide for myself will also help solidify what I'm learning currently in Dr. Garrisons Applied Data Psychology class and help me with future labs and portfolio pieces. Specifically, I want to include some common issues I've encountered so far, and how to fix them, as well as how to ask good questions about them. I want to include links to helpful websites I can reference in the future, as well as links to Dr. Garrisons youtube lectures so I can look back at those if I need to. Given that, I hope to continue adding to this portfolio piece throughout the class. 
+
+# Intro to Software
+## R/RStudio
+### R Basics and workflows
+### Care and feeding of data
+## Git/Github
+
+
+
+# Importing Data
+
+
+
+
+# Tidying Data
+
+
+
+
+# Transforming Data
+
+
+
+
+
+# Visualizing Data
+## ggplot2
+This website has the [ggplot 2 package index](https://ggplot2.tidyverse.org/reference/index.html#section-geoms).
+ggplot2 is part of the tidyverse package. 
+### argument structure
+Begin with the ggplot() function, defining a plot object that you can add layers to. The first argument in the dataset to use in the graph. next, the mapping argument defines how variables in dataset are mapped to visual properties (aesthetics) of your plot. Next, define a geom (geometrical object used to represent data)
+
+```{r structure}
+ggplot(
+  
+)
+```
+
+### adding aesthetics and layers
+when a categorical variable is mapped to an aesthetic, there will automatically be a unique value of the aesthetic (ex, color) assigned to each unique level of the variable (process known as scaling). 
+when aethetic mappings are defined in ggplot(), its at the global level, so theyre passed down to each subsequent geom layer. another option is to map aesthetics in the mapping argument at the local level. 
+
+example: 
+```{r global}
+# make sure you change the dataset!
+ggplot(
+  data = ,
+  mapping = aes(x = , y = , color = )
+) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+```{r local}
+ggplot(
+  data = ,
+  mapping = aes(x = , y = )
+) +
+  geom_point(mapping = aes(color = )) +
+  geom_smooth(method = "lm")
+```
+
+### visualizing distributions
+

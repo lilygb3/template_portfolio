@@ -303,8 +303,7 @@ etc.), the data, and some interpretation. Reports must be reproducible
 and of high quality in terms of writing, grammar, presentation, etc.</p>
 </blockquote>
 <pre class="r"><code>library(tidyverse) 
-library(tidyr)
-data(fish_encounters)</code></pre>
+library(tidyr)</code></pre>
 <div id="goal" class="section level1">
 <h1><strong>Goal</strong></h1>
 <p>The goal of this portfolio piece is to create a reference I can look
@@ -318,6 +317,76 @@ them. I want to include links to helpful websites I can reference in the
 future, as well as links to Dr. Garrisons youtube lectures so I can look
 back at those if I need to. Given that, I hope to continue adding to
 this portfolio piece throughout the class.</p>
+</div>
+<div id="intro-to-software" class="section level1">
+<h1>Intro to Software</h1>
+<div id="rrstudio" class="section level2">
+<h2>R/RStudio</h2>
+<div id="r-basics-and-workflows" class="section level3">
+<h3>R Basics and workflows</h3>
+</div>
+<div id="care-and-feeding-of-data" class="section level3">
+<h3>Care and feeding of data</h3>
+</div>
+</div>
+<div id="gitgithub" class="section level2">
+<h2>Git/Github</h2>
+</div>
+</div>
+<div id="importing-data" class="section level1">
+<h1>Importing Data</h1>
+</div>
+<div id="tidying-data" class="section level1">
+<h1>Tidying Data</h1>
+</div>
+<div id="transforming-data" class="section level1">
+<h1>Transforming Data</h1>
+</div>
+<div id="visualizing-data" class="section level1">
+<h1>Visualizing Data</h1>
+<div id="ggplot2" class="section level2">
+<h2>ggplot2</h2>
+<p>This website has the <a
+href="https://ggplot2.tidyverse.org/reference/index.html#section-geoms">ggplot
+2 package index</a>. ggplot2 is part of the tidyverse package. ###
+argument structure Begin with the ggplot() function, defining a plot
+object that you can add layers to. The first argument in the dataset to
+use in the graph. next, the mapping argument defines how variables in
+dataset are mapped to visual properties (aesthetics) of your plot. Next,
+define a geom (geometrical object used to represent data)</p>
+<pre class="r"><code>ggplot(
+  
+)</code></pre>
+<p><img src="p01_files/figure-html/structure-1.png" width="672" /></p>
+<div id="adding-aesthetics-and-layers" class="section level3">
+<h3>adding aesthetics and layers</h3>
+<p>when a categorical variable is mapped to an aesthetic, there will
+automatically be a unique value of the aesthetic (ex, color) assigned to
+each unique level of the variable (process known as scaling). when
+aethetic mappings are defined in ggplot(), its at the global level, so
+theyre passed down to each subsequent geom layer. another option is to
+map aesthetics in the mapping argument at the local level.</p>
+<p>example:</p>
+<pre class="r"><code># make sure you change the dataset!
+ggplot(
+  data = ,
+  mapping = aes(x = , y = , color = )
+) +
+  geom_point() +
+  geom_smooth(method = &quot;lm&quot;)</code></pre>
+<p><img src="p01_files/figure-html/global-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(
+  data = ,
+  mapping = aes(x = , y = )
+) +
+  geom_point(mapping = aes(color = )) +
+  geom_smooth(method = &quot;lm&quot;)</code></pre>
+<p><img src="p01_files/figure-html/local-1.png" width="672" /></p>
+</div>
+<div id="visualizing-distributions" class="section level3">
+<h3>visualizing distributions</h3>
+</div>
+</div>
 </div>
 
 
