@@ -14,7 +14,11 @@ PTSD <- read_csv("data/PTSD.csv")
 PTSD_military <- PTSD %>% filter(`Military Status (Study level)` %in% c("Military", "Veteran"), `Treatment Focus (Study level)` == "PTSD") #filter dataset for active duty military and veterans, as well as studys focusing only on PTSD
 ```
 
+```{r filter-variables}
+new_military_PTSD <- PTSD_military %>% select(`Study Class`, `Treatment Focus (Arm level)`, `Total N Randomized`, Psychotherapy, `Psychotherapy Subclass`, Pharmacotherapy, `Pharmacotherapy Subclass`, CIH, `CIH Subclass`, Control, Frequency, `Treatment Duration`)
+```
+
 ```{r}
-new_military_PTSD <- military_PTSD %>% select(`Study Class`, `Treatment Focus (Arm level)`, `Total N Randomized`, Psychotherapy, `Psychotherapy Subclass`, Pharmacotherapy, `Pharmacotherapy Subclass`, CIH, `CIH Subclass`, Control, Frequency, `Treatment Duration`)
+
 ```
 

@@ -317,6 +317,7 @@ $(document).ready(function () {
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>PTSD_military &lt;- PTSD %&gt;% filter(`Military Status (Study level)` %in% c(&quot;Military&quot;, &quot;Veteran&quot;), `Treatment Focus (Study level)` == &quot;PTSD&quot;) #filter dataset for active duty military and veterans, as well as studys focusing only on PTSD</code></pre>
+<pre class="r"><code>new_military_PTSD &lt;- PTSD_military %&gt;% select(`Study Class`, `Treatment Focus (Arm level)`, `Total N Randomized`, Psychotherapy, `Psychotherapy Subclass`, Pharmacotherapy, `Pharmacotherapy Subclass`, CIH, `CIH Subclass`, Control, Frequency, `Treatment Duration`)</code></pre>
 
 
 
