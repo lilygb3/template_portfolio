@@ -324,7 +324,8 @@ is currently known about PTSD treatment. It includes 583 studies.</p>
 active duty military or veterans. I also want the treatment focus at the
 study level to be on PTSD. Here I created a new dataframe with those
 filters.</p>
-<pre class="r"><code>PTSD_military &lt;- PTSD %&gt;% filter(`Military Status (Study level)` %in% c(&quot;Military&quot;, &quot;Veteran&quot;), `Treatment Focus (Study level)` == &quot;PTSD&quot;) #filter dataset for active duty military and veterans, as well as studys focusing only on PTSD</code></pre>
+<pre class="r"><code>PTSD_military &lt;- PTSD %&gt;% 
+  filter(`Military Status (Study level)` %in% c(&quot;Military&quot;, &quot;Veteran&quot;), `Treatment Focus (Study level)` == &quot;PTSD&quot;) #filter dataset for active duty military and veterans, as well as studys focusing only on PTSD</code></pre>
 <p>Now, I want to organize the types of psychotherapy into 5 groups so I
 can compare more easily. The 5 groups are: EMDR, TF-CBT, TF-Other,
 Non-trauma-focused, and Mixed psychotherapy. I took these groupings from
@@ -339,7 +340,35 @@ cognitive behavioral therapy: some examples include Reconsolidation of
 Traumatic Memories (RTM), and Trauma counseling. Non-trauma-focused
 includes CBT without trauma focus, and other non-trauma-focused
 treatments. Lastly, Mixed psychotherapy includes a combination of
-multiple treatments, for example CBT + EMDR.</p>
+multiple treatments, for example CBT + EMDR. Not all of the standardized
+treatments are in the list i am pulling from, so I am going to name
+those as “other”. I mainly want to focus on comparing these 5 main
+groups.</p>
+<p>First, I will add a new variable, “category”. The levels will be the
+5 different groups plus other: EMDR, TF-CBT, TF-Other,
+Non-trauma-focused, Mixed psychotherapy, and other.</p>
+<pre class="r"><code>PTSD_military %&gt;% 
+  mutate()</code></pre>
+<pre><code>## # A tibble: 339 × 53
+##    `Study ID`        Author, Year (Study …¹ `Study Class` Study Publication Ye…²
+##    &lt;chr&gt;             &lt;chr&gt;                  &lt;chr&gt;                          &lt;dbl&gt;
+##  1 acierno2017_A     acierno2017            Psychotherapy                   2017
+##  2 acierno2017_B     acierno2017            Psychotherapy                   2017
+##  3 acierno2021_A     acierno2021            Psychotherapy                   2021
+##  4 acierno2021_B     acierno2021            Psychotherapy                   2021
+##  5 ahmadizadeh2018_A ahmadizadeh2018        Nonpharmacol…                   2018
+##  6 ahmadizadeh2018_B ahmadizadeh2018        Nonpharmacol…                   2018
+##  7 ahmadizadeh2018_C ahmadizadeh2018        Nonpharmacol…                   2018
+##  8 akuchekian2004_A  akuchekian2004         Pharmacother…                   2004
+##  9 akuchekian2004_B  akuchekian2004         Pharmacother…                   2004
+## 10 ardani2017_A      ardani2017             Pharmacother…                   2017
+## # ℹ 329 more rows
+## # ℹ abbreviated names: ¹​`Author, Year (Study level)`, ²​`Study Publication Year`
+## # ℹ 49 more variables: `Treatment Focus (Study level)` &lt;chr&gt;,
+## #   `Treatment Focus (Arm level)` &lt;chr&gt;,
+## #   `Treatment Focus Subclass (Arm level)` &lt;chr&gt;, `Total N Randomized` &lt;dbl&gt;,
+## #   `Intervention Group` &lt;chr&gt;, `Arm N Randomized` &lt;dbl&gt;,
+## #   `Arm N Randomized Detail` &lt;chr&gt;, `Treatment Name` &lt;chr&gt;, …</code></pre>
 
 
 

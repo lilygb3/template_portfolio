@@ -15,10 +15,18 @@ PTSD <- read_csv("data/PTSD.csv")
 I want to filter the dataset to only inciude participants who are active duty military or veterans. I also want the treatment focus at the study level to be on PTSD. Here I created a new dataframe with those filters. 
 
 ```{r filter-military-status}
-PTSD_military <- PTSD %>% filter(`Military Status (Study level)` %in% c("Military", "Veteran"), `Treatment Focus (Study level)` == "PTSD") #filter dataset for active duty military and veterans, as well as studys focusing only on PTSD
+PTSD_military <- PTSD %>% 
+  filter(`Military Status (Study level)` %in% c("Military", "Veteran"), `Treatment Focus (Study level)` == "PTSD") #filter dataset for active duty military and veterans, as well as studys focusing only on PTSD
 ```
 
 Now, I want to organize the types of psychotherapy into 5 groups so I can compare more easily. The 5 groups are: EMDR, TF-CBT, TF-Other, Non-trauma-focused, and Mixed psychotherapy. I took these groupings from a resource I found on the same site as the data. They give suggestions on how you might group together specific standardized treatments into larger categories. [Table](https://ptsd-va.data.socrata.com/Reference/Psychotherapy-Progressively-Specific-Grouping/5vmb-i9mg/about_data)
 EMDR is Eye Movement Desensitization and Reprocessing. TF-CBT is trauma-focused cognitive behavioral therapy, which includes exposure therapy and cognitive therapy. TF-Other is tramua-focused, but not cognitive behavioral therapy: some examples include Reconsolidation of Traumatic Memories (RTM), and Trauma counseling. Non-trauma-focused includes CBT without trauma focus, and other non-trauma-focused treatments. Lastly, Mixed psychotherapy includes a combination of multiple treatments, for example CBT + EMDR. 
+Not all of the standardized treatments are in the list i am pulling from, so I am going to name those as "other". I mainly want to focus on comparing these 5 main groups. 
 
+First, I will add a new variable, "category". The levels will be the 5 different groups plus other: EMDR, TF-CBT, TF-Other, Non-trauma-focused, Mixed psychotherapy, and other. 
+
+```{r new-category-variable}
+PTSD_military %>% 
+  mutate()
+```
 
