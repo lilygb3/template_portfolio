@@ -306,6 +306,10 @@ $(document).ready(function () {
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<p>I am reading in data from the <a
+href="https://ptsd-va.data.socrata.com/">PTSD Repository</a>, which was
+created by the National Center for PTSD to help people understand what
+is currently known about PTSD treatment. It includes 583 studies.</p>
 <pre class="r"><code>PTSD &lt;- read_csv(&quot;data/PTSD.csv&quot;)</code></pre>
 <pre><code>## Rows: 1282 Columns: 53
 ## ── Column specification ────────────────────────────────────────────────────────
@@ -316,8 +320,26 @@ $(document).ready(function () {
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>I want to filter the dataset to only inciude participants who are
+active duty military or veterans. I also want the treatment focus at the
+study level to be on PTSD. Here I created a new dataframe with those
+filters.</p>
 <pre class="r"><code>PTSD_military &lt;- PTSD %&gt;% filter(`Military Status (Study level)` %in% c(&quot;Military&quot;, &quot;Veteran&quot;), `Treatment Focus (Study level)` == &quot;PTSD&quot;) #filter dataset for active duty military and veterans, as well as studys focusing only on PTSD</code></pre>
-<pre class="r"><code>new_military_PTSD &lt;- PTSD_military %&gt;% select(`Study Class`, `Treatment Focus (Arm level)`, `Total N Randomized`, Psychotherapy, `Psychotherapy Subclass`, Pharmacotherapy, `Pharmacotherapy Subclass`, CIH, `CIH Subclass`, Control, Frequency, `Treatment Duration`)</code></pre>
+<p>Now, I want to organize the types of psychotherapy into 5 groups so I
+can compare more easily. The 5 groups are: EMDR, TF-CBT, TF-Other,
+Non-trauma-focused, and Mixed psychotherapy. I took these groupings from
+a resource I found on the same site as the data. They give suggestions
+on how you might group together specific standardized treatments into
+larger categories. <a
+href="https://ptsd-va.data.socrata.com/Reference/Psychotherapy-Progressively-Specific-Grouping/5vmb-i9mg/about_data">Table</a>
+EMDR is Eye Movement Desensitization and Reprocessing. TF-CBT is
+trauma-focused cognitive behavioral therapy, which includes exposure
+therapy and cognitive therapy. TF-Other is tramua-focused, but not
+cognitive behavioral therapy: some examples include Reconsolidation of
+Traumatic Memories (RTM), and Trauma counseling. Non-trauma-focused
+includes CBT without trauma focus, and other non-trauma-focused
+treatments. Lastly, Mixed psychotherapy includes a combination of
+multiple treatments, for example CBT + EMDR.</p>
 
 
 
