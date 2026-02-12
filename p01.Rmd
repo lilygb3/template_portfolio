@@ -1,77 +1,47 @@
 ---
-title: "Portfolio 1"
+title: "R & GitHub Personal Reference Guide"
+subtitle: "Portfolio 1"
 ---
 
-> The projects should be numbered consecutively (i.e., in the order in which you began them), and should include for each project a description of the goal, the product (computer program, hand graph, computer graph, etc.), the data, and some interpretation. Reports must be reproducible and of high quality in terms of writing, grammar, presentation, etc.
-
-```{r load-packages, warning = FALSE, message=FALSE}
-library(tidyverse) 
-library(tidyr)
-```
-
 # **Goal**
-The goal of this portfolio piece is to create a reference I can look back on later to help me with R and Git/GitHub, because I plan to use R after I graduate. The process of making this guide for myself will also help solidify what I'm learning currently in Dr. Garrisons Applied Data Psychology class and help me with future labs and portfolio pieces. Specifically, I want to include some common issues I've encountered so far, and how to fix them, as well as how to ask good questions about them. I want to include links to helpful websites I can reference in the future, as well as links to Dr. Garrisons youtube lectures so I can look back at those if I need to. Given that, I hope to continue adding to this portfolio piece throughout the class. 
+The goal of this portfolio is to develop a quick reference guide for using R and Git/GitHub that I can use after graduation. Because I plan to continue using R after I graduate, I want to create a resource that not only documents core technical skills but also reflects my development throughout this class. 
 
-# Intro to Software
-## R/RStudio
-### R Basics and workflows
-### Care and feeding of data
-## Git/Github
+In the process of building this guide, I aim to reinforce and consolidate the skills I am learning in Dr. Garrison's Applied Data Psychology course. By organizing concepts, writing out examples, and documenting common errors and their solutions, I will deepen my understanding while also creating a practical tool for future lab work and projects. 
 
+Specifically, this guide will include commmon challenges I have encountered in R and Git, explananations of why those issues occur, strategies for debugging them, and guidance on how to ask clear, technical questions. I will also compile links to trusted reference materials, including relevant documentation, websites, and Dr. Garrison's lecture recordings, so that I can revisit material when needed. 
 
+I intend for this portfolio piece to be iterative and expandable, continuing to refine and add to it throughout the semester. 
 
-# Importing Data
-
+# **Setup & Environment Configuration**
+How to configure R, RStudio, and Git/GitHub, organize project folders, and manage packages. 
 
 
-
-# Tidying Data
-
-
+# **Data Import, Inspection & Cleaning**
+How to read data into R, check structure and types, handle missing values, and reshape datasets into tidy format for analysis. 
 
 
-# Transforming Data
+# **Data Transformation**
+Core dplyr workflows for filtering, grouping, summarizing, and creating calculated variables. 
 
 
+# **Data Visualization**
+Reusable plotting templates and strategies for creating clear visualizations. 
 
 
+# **Working with Complex Data**
+How to merge datasets, clean text variables, and manage categorical data. 
 
-# Visualizing Data
-## ggplot2
-This website has the [ggplot 2 package index](https://ggplot2.tidyverse.org/reference/index.html#section-geoms).
-ggplot2 is part of the tidyverse package. 
-### argument structure
-Begin with the ggplot() function, defining a plot object that you can add layers to. The first argument in the dataset to use in the graph. next, the mapping argument defines how variables in dataset are mapped to visual properties (aesthetics) of your plot. Next, define a geom (geometrical object used to represent data)
 
-```{r structure}
-ggplot(
-  
-)
-```
+# **Modeling & Statistical Integration**
+How to fit basic statistical models, interpret outputs, and incorporate modeling into a tidy workflow. 
 
-### adding aesthetics and layers
-when a categorical variable is mapped to an aesthetic, there will automatically be a unique value of the aesthetic (ex, color) assigned to each unique level of the variable (process known as scaling). 
-when aethetic mappings are defined in ggplot(), its at the global level, so theyre passed down to each subsequent geom layer. another option is to map aesthetics in the mapping argument at the local level. 
 
-example: 
-```{r global}
-# make sure you change the dataset!
-ggplot(
-  data = ,
-  mapping = aes(x = , y = , color = )
-) +
-  geom_point() +
-  geom_smooth(method = "lm")
-```
+# **Writing Clean, Reusable Code**
+How to write functions, avoid repetition, structure scripts clearly, and scale analyses efficiently. 
 
-```{r local}
-ggplot(
-  data = ,
-  mapping = aes(x = , y = )
-) +
-  geom_point(mapping = aes(color = )) +
-  geom_smooth(method = "lm")
-```
 
-### visualizing distributions
+# **Debugging, Version Control & Growth**
+Common errors I've encountered, strategies for troubleshooting and asking effective questions, and Git/GitHub workflow practices. 
+
+
 
