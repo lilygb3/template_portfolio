@@ -26,7 +26,11 @@ Not all of the standardized treatments are in the list i am pulling from, so I a
 First, I will add a new variable, "category". The levels will be the 5 different groups plus other: EMDR, TF-CBT, TF-Other, Non-trauma-focused, Mixed psychotherapy, and other. 
 
 ```{r new-category-variable}
-PTSD_military %>% 
-  mutate()
+PTSD_military <- PTSD_military %>% 
+  mutate(
+    category = case_when(
+      `Standardized Treatment Name` == "Eye Movement Desensitization and Reprocessing (EMDR)" ~ "EMDR"
+      )
+    )
 ```
 
